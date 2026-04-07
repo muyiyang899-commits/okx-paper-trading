@@ -1,6 +1,5 @@
+from flask import Flask
 import ccxt
-import time
-from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -14,8 +13,6 @@ exchange = ccxt.okx({
 'password': OKX_PASSPHRASE,
 'enableRateLimit': True,
 })
-
-prices = {}
 
 @app.route('/')
 def home():
